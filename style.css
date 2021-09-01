@@ -1,4 +1,40 @@
-body {background-color:tan;}
-h1{color:green;}
+html {
+     background-color: grey;
+     margin-top: 2em;
+     width: 80%;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     }
 
+body {
+    margin: auto;
+    background-color: white;
+    border: 4px;
+    border-radius: 20px;
+    padding-left: 30px;
+    font-size: 1.5em;
+    width: 65%
+}
 
+body h1 {
+text-align: center;
+font-size: 1.5em;
+}
+
+button
+{
+    text-align: center;
+    font-size: 0.8em;
+}
+
+displayOut
+{
+    font-size: 1.2em;
+    padding-left: 2em;
+    margin: 7px 0px
+}
+
+footer {    
+margin: 0px 16px;
+padding-left: 0px;
+padding-bottom: 0.8em;
+}
