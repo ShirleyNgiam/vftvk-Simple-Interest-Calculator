@@ -1,18 +1,37 @@
-function compute(p,r,y)
+function compute()
 {
     
-    var p = document.getElementById("principal").value;
-    var r = document.getElementById("rate").value;
-    var y = parseInt(document.getElementById("years").value);
-    var yearInFuture = new Date().getFullYear() + y;
-    var result = p * r * 0.01 * y;
-    document.getElementById("displayOut").innerHTML = "If you deposit <mark>" + p + "</mark>,<br/>" +
-    "at an interest rate of <mark>" + r + "&#37" + "</mark>,<br/>" +
-    "You will receive an amount of <mark>" + result + "</mark>,<br/> " +
-    "in the year <mark>" + yearInFuture + "</mark>"; 
-    // document.getElementById("iRate").innerHTML = "<p> r #&#37  </p> </br>" ;
+    var principal = document.getElementById("principal").value;
+    var rate = document.getElementById("rate").value;
+    var years = document.getElementById("years").value;
+    var interest = principal * years * rate / 100; 
+    var year = new Date().getFullYear() + parseInt(years);
 
-}    
+    
+    document.getElementById("result").innerHTML = "If you deposit <mark>" + principal + "</mark>,<br/>" +
+    "at an interest rate of <mark>" + rate + "&#37" + "</mark>,<br/>" +
+    "You will receive an amount of <mark>" + interest  + "</mark>,<br/> " +
+    "in the year <mark>" + year + "</mark>"; 
+    // document.getElementById("iRate").innerHTML = "<p> r #&#37  </p> </br>" ;
+}
+
+function updateRate()
+    {
+        var rateval = document.getElementById("rate").value;
+        document.getElementById("rate_val").innerText=rateval;
+    }
+
+//check for positive amount
+
+    function validateAmount() {
+    var principal = document.getElementById("principal").value;
+    var biggerThanZero = parseInt(principal) > 0;
+    if (!biggerThanZero) {
+        alert("Enter a positive number");
+        document.getElementById("principal").focus();
+    }
+
+}
 //get range value
 function getRangeValue() {
     document.getElementById("iRate").innerHTML = document.getElementById("rate").value + "&#37";
